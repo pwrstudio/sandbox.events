@@ -23,7 +23,6 @@ export default {
   margin-right: 20px;
   margin-left: 20px;
   color: white;
-  line-height: 54px;
   word-spacing: -0.2em;
 }
 </style>

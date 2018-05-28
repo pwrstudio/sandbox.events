@@ -15,8 +15,23 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'home',
+  mounted() {
+    if (!this.$route.params.issue) {
+      this.$router.push('0')
+    }
+  }
+}
+</script>
+
 <style lang="scss">
 @import './assets/fonts/lincolnmitre/stylesheet.css';
+@import './style/helpers/_mixins.scss';
+@import './style/helpers/_responsive.scss';
+@import './style/helpers/_reset.css';
+@import './style/_variables.scss';
 
 body,
 html {
@@ -25,10 +40,19 @@ html {
   -moz-osx-font-smoothing: grayscale;
   color: #00f;
   font-size: 64px;
+  line-height: 54px;
   background: #000;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
+  @include screen-size('small') {
+    font-size: 32px;
+    line-height: 32px !important;
+  }
+}
+
+p {
+  margin-top: 32px;
 }
 
 #app {

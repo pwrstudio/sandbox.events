@@ -1,0 +1,54 @@
+/* Typography */
+$line-height: 26px;
+$serif-stack: 'Rosart-Medium', times, georgia, serif;
+$serif-stack-italic: 'Rosart-MediumItalic', times, georgia, serif;
+$sans-serif-stack: 'HelveticaNeue-Medium', helvetica, arial, sans-serif;
+/* Small */
+$font-size-s: 12px;
+$line-height-s: 14px;
+/* Normal */
+$font-size: 14px;
+$line-height: 22px;
+/* Small 2 */
+$font-size-sm: 17px;
+$line-height-sm: 24px;
+/* Medium */
+$font-size-m: 20px;
+$line-height-m: 26px;
+/* Large */
+$font-size-l: 30px;
+$line-height-l: 32px;
+/* Extra large */
+$font-size-xl: 32px;
+$line-height-xl: 40px;
+$wide-spacing: 1.5px;
+$bullet: 12px;
+/* Color */
+$background-color: #fff;
+$black: #000;
+$white: #fff;
+/* Padding */
+$padding-top-landing: 30px;
+$padding-sides-landing: 15px;
+$padding-top-issue: 20px;
+$padding-sides-issue: 15px;
+/* Cover */
+$cover-width: 50vmin;
+$cover-height: $cover-width * 1.5;
+$cover-width-mobile: 70vw;
+$cover-height-mobile: $cover-width-mobile * 1.5;
+/* SVG */
+$svg-size-l: 32px;
+$svg-size-m: 24px;
+$svg-size-s: 18px;
+/* Border */
+$border-width: 1px;
+$black-border: 3px solid black;
+$underline: 2px solid black;
+/* Breakpoints */
+$breakpoints: (
+  'small': (max-width: 900px),
+  'medium': (max-width: 1000px),
+  'large': (max-width: 1600px),
+  'short': (max-height: 700px)
+);

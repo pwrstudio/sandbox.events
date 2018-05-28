@@ -1,0 +1,148 @@
+@mixin progress($light: false) {
+  progress {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px !important;
+    align-self: center;
+    border: none;
+    background: $white;
+
+    @if $light == true {
+      background: $black;
+    }
+
+    @if $light == true {
+      /* Firefox  */
+      &::-moz-progress-bar {
+        background: $black;
+      }
+
+      &:not([value])::-moz-progress-bar {
+        background: $white;
+      }
+
+      /* Chrome */
+      &::-webkit-progress-bar {
+        background: $black;
+      }
+
+      &::-webkit-progress-value {
+        background: $white;
+      }
+
+      &:not([value])::-webkit-progress-bar {
+        background: $black;
+      }
+    } @else {
+      &::-moz-progress-bar {
+        background: $white;
+      }
+
+      &:not([value])::-moz-progress-bar {
+        background: $black;
+      }
+
+      &::-webkit-progress-bar {
+        background: $white;
+      }
+
+      &::-webkit-progress-value {
+        background: $black;
+      }
+
+      &:not([value])::-webkit-progress-bar {
+        background: $white;
+      }
+    }
+  }
+}
+
+@mixin drop-shadow {
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.6);
+}
+
+/// Helper to clear inner floats
+/// @author Nicolas Gallagher
+/// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+///
+/// Helper to handle overflowing text
+/// Values of text-overflow are: clip, ellipsis, or a string
+///
+@mixin truncate-text($overflow: ellipsis) {
+  overflow: hidden;
+  text-overflow: $overflow; //
+  white-space: nowrap;
+}
+///
+/// Helper to set height and width
+///
+@mixin size($width, $height: $width) {
+  height: $height;
+  width: $width;
+}
+///
+/// Helper to center element vertically and horizontally in parent
+///
+@mixin center {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+///
+/// Helper to center element vertically in parent
+///
+@mixin center-vertical {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+///
+/// Helper to center element horizontally in parent
+///
+@mixin center-horizontal {
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+@mixin hide-scroll {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+}
+///
+/// Credit: thoughtbot - http://robots.thoughtbot.com/sasss-content-directive
+///
+/* USAGE
+.block {
+  color: red;
+  @include element(element) {
+    color: green;
+    @include modifier(modifier) {
+      color: blue;
+    }
+  }
+}
+*/
+@mixin element($name) {
+  @at-root #{&}__#{$name} {
+    @content;
+  }
+}
+@mixin modifier($name) {
+  @at-root #{&}--#{$name} {
+    @content;
+  }
+}
