@@ -49,10 +49,11 @@ html {
     font-size: 32px;
     line-height: 32px !important;
   }
+  @include hide-scroll;
 }
 
 p {
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 #app {
@@ -74,6 +75,7 @@ a {
 }
 
 #nav {
+  margin-top: 20px;
   margin-left: 20px;
   user-select: none;
 }
