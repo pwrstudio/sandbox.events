@@ -1,29 +1,67 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <span class='main-title'>SANDBOX</span>
+      <span class='divider'>/</span>
+      <router-link to="/0">0</router-link>
+      <span class='divider'>/</span>
+      <router-link to="/1">1</router-link>
+      <span class='divider'>/</span>
+      <router-link to="/2">2</router-link>
+      <span class='divider'>/</span>
+      <router-link to="/3">3</router-link>
     </div>
     <router-view/>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+@import './assets/fonts/lincolnmitre/stylesheet.css';
+
+body,
+html {
+  font-family: 'lincolnmitrelm', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  color: #00f;
+  font-size: 64px;
+  background: #000;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+
+#app {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: #fff;
   }
+  &.router-link-active {
+    color: #fff;
+  }
+}
+
+#nav {
+  margin-left: 20px;
+  user-select: none;
+}
+
+.divider {
+  color: #fff;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.main-title {
+  // text-decoration: underline;
+  // border-bottom: 8px solid #00f;
 }
 </style>
